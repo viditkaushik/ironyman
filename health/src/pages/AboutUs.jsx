@@ -1,22 +1,42 @@
-import React from 'react';
-import './AboutUs.css'; // Import the CSS for the AboutUs component
+import React, { useState, useEffect } from 'react';
+import './AboutUs.css';
 
 function AboutUs() {
+  const [theme, setTheme] = useState('theme-light'); // Default theme
+
+  useEffect(() => {
+    // Update the body class whenever the theme changes
+    document.body.className = theme;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    // Toggle between light and dark themes
+    setTheme((prevTheme) =>
+      prevTheme === 'theme-light' ? 'theme-dark' : 'theme-light'
+    );
+  };
+
   return (
     <div className="aboutus-container">
       <div className="layout-container">
-        <div className="main-content">
-          <div className="content-container">
-            <HeroSection />
-            <HowItWorksSection />
-          </div>
-        </div>
+        <MainContent toggleTheme={toggleTheme} />
       </div>
     </div>
   );
 }
 
-function HeroSection() {
+function MainContent({ toggleTheme }) {
+  return (
+    <div className="main-content">
+      <div className="content-container">
+        <HeroSection toggleTheme={toggleTheme} />
+        <HowItWorksSection />
+      </div>
+    </div>
+  );
+}
+
+function HeroSection({ toggleTheme }) {
   return (
     <div className="hero-section">
       <div className="hero-content">
@@ -24,11 +44,8 @@ function HeroSection() {
           We're on a mission to make healthcare more affordable and accessible
         </h1>
         <div className="hero-buttons">
-          <button className="get-started-button">
-            <span className="truncate">Get started</span>
-          </button>
-          <button className="learn-more-button">
-            <span className="truncate">Learn more</span>
+          <button onClick={toggleTheme} className="get-started-button">
+            <span className="truncate">Toggle Theme</span>
           </button>
         </div>
       </div>
@@ -39,9 +56,7 @@ function HeroSection() {
 function HowItWorksSection() {
   return (
     <div className="how-it-works-section">
-      <h1 className="section-title">
-        How it works
-      </h1>
+      <h1 className="section-title">How it works</h1>
     </div>
   );
 }

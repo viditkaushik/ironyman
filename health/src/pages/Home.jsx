@@ -1,15 +1,11 @@
 import React from 'react';
 import './Home.css'; // Import the CSS for the Home component
-import Header from '../components/Header'; // Adjust the path as necessary
-import Footer from '../components/Footer';
 
-function Home() {
+function Home({ theme, toggleTheme }) {
   return (
     <div className="home-container">
       <div className="layout-container">
-        <Header />
         <MainContent />
-        <Footer />
       </div>
     </div>
   );

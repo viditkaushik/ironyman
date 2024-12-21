@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Import the CSS for the Login component
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [theme, setTheme] = useState('theme-light'); // Default theme
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Update the body class whenever the theme changes
+    document.body.className = theme;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    // Toggle between light and dark themes
+    setTheme((prevTheme) =>
+      prevTheme === 'theme-light' ? 'theme-dark' : 'theme-light'
+    );
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,6 +55,7 @@ function Login() {
           </div>
           <button type="submit" className="login-button">Log In</button>
         </form>
+        <button onClick={toggleTheme} className="login-button">Toggle Theme</button>
       </div>
     </div>
   );

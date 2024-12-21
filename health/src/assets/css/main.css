@@ -1,64 +1,76 @@
-/* src/assets/css/main.css */
-
 /* Global Styles */
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #2d2d2d; /* Dark background for footer */
-    color: white; /* White text */
-    padding: 1.5rem 0; /* Padding on top and bottom */
-    text-align: center; /* Center the text */
-  }
-  
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color); /* Ensure body background color changes */
+  color: var(--text-color); /* Ensure text color changes */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text color */
+}
+
+header, footer {
+  background-color: var(--header-background); /* Apply header background color based on theme */
+  color: var(--text-color); /* Apply text color based on theme */
+}
+
+/* Footer Styles */
+footer {
+  padding: 1.5rem 0; /* Padding on top and bottom */
+  text-align: center; /* Center the text */
+}
+
+footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+footer .footer-links a {
+  text-decoration: none;
+  color: var(--text-color); /* Ensure link color changes with theme */
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+footer .footer-links a:hover {
+  color: #ffffff; /* On hover, text turns white */
+}
+
+footer .footer-copy {
+  font-size: 1rem;
+  color: var(--text-color); /* Ensure footer copy color changes with theme */
+  margin-top: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
   footer .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    flex-direction: row;
+    justify-content: space-around;
   }
-  
-  footer .footer-links a {
-    text-decoration: none;
-    color: #ababab;
-    font-size: 1rem;
-    font-weight: normal;
-  }
-  
-  footer .footer-links a:hover {
-    color: #ffffff;
-  }
-  
-  footer .footer-copy {
-    font-size: 1rem;
-    color: #ababab;
-    margin-top: 1rem;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 480px) {
-    footer .footer-links {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-  }
-  
-  a {
-    text-decoration: none;
-    color: white;
-  }
+}
+
+/* Header Styles (if you have a header component) */
+header {
+  padding: 1rem;
+  background-color: var(--header-background); /* Apply theme-based header background */
+  color: var(--text-color); /* Apply theme-based text color */
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--text-color); /* Ensure h1 color changes based on theme */
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color); /* Ensure link color changes based on theme */
+}
+
+a:hover {
+  color: #ffffff; /* Hover state for links */
+}

@@ -5,12 +5,15 @@ import './assets/css/main.css';
 import App from './App';
 import './assets/css/main.css';  // Ensure the path is correct
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from './ThemeContext';
+import './assets/css/themes.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
 reportWebVitals(console.log);

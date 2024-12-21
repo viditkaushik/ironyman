@@ -1,3 +1,4 @@
+/* Global Styles */
 html, body {
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ html, body {
   height: 100%;
   min-height: 100vh;
   flex-direction: column;
-  background-color: black;
+  background-color: var(--background-color); /* Use theme variable */
   overflow-x: hidden;
 }
 
@@ -27,7 +28,7 @@ html, body {
   justify-content: space-between;
   padding: 10px 40px;
   border-bottom: 1px solid #292929;
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
 }
 
 .logo-container {
@@ -59,7 +60,7 @@ html, body {
 }
 
 .nav-link {
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
@@ -85,12 +86,12 @@ html, body {
 
 .sign-up-button {
   background-color: #EA2831;
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
 }
 
 .log-in-button {
   background-color: #292929;
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
 }
 
 .main-content {
@@ -128,14 +129,14 @@ html, body {
 }
 
 .hero-title {
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
   font-size: 2.5rem;
   font-weight: 900;
   letter-spacing: -0.033em;
 }
 
 .hero-subtitle {
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
   font-size: 1rem;
   font-weight: normal;
 }
@@ -147,7 +148,7 @@ html, body {
   padding: 0 20px;
   height: 40px;
   background-color: #EA2831;
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
   font-size: 0.875rem;
   font-weight: bold;
   letter-spacing: 0.015em;
@@ -168,14 +169,14 @@ html, body {
 }
 
 .features-title {
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: -0.033em;
 }
 
 .features-description {
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
   font-size: 1rem;
   font-weight: normal;
 }
@@ -194,7 +195,7 @@ html, body {
 }
 
 .anemia-test-title {
-  color: #FFFFFF;
+  color: var(--text-color); /* Use theme variable */
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: -0.033em;
@@ -209,7 +210,7 @@ html, body {
   display: flex;
   justify-content: center;
   padding: 40px 0;
-  background-color: #000000;
+  background-color: var(--footer-background); /* Use theme variable */
 }
 
 .footer-content {
@@ -227,12 +228,12 @@ html, body {
 }
 
 .footer-link {
-  color: #ABABAB;
+  color: #ABABAB; /* Keep color for links */
   font-size: 1rem;
   text-decoration: none;
 }
 
 .footer-text {
-  color: #ABABAB;
+  color: var(--text-color); /* Use theme variable */
   font-size: 1rem;
 }

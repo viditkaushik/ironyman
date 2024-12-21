@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'; // Import the CSS for the Header component
-import './assets/css/themes.css';
-function Header() {
+import '../assets/css/themes.css'; // Ensure the path is correct
+
+const Header = ({ theme, toggleTheme }) => {
+  useEffect(() => {
+    // Set the theme when the component mounts based on the global theme
+    if (theme === 'dark') {
+      document.body.classList.add('theme-dark');
+      document.body.classList.remove('theme-light');
+    } else {
+      document.body.classList.add('theme-light');
+      document.body.classList.remove('theme-dark');
+    }
+  }, [theme]);
+
   return (
     <header className="header">
       <div className="logo-container">
@@ -27,7 +39,7 @@ function Header() {
         <div className="nav-links">
           <Link className="nav-link" to="/">Home</Link>
           <Link className="nav-link" to="/about-us">About Us</Link>
-          <Link className="nav-link" to="/anemia-detection">Anemia Detection</Link> {/* New Link Added */}
+          <Link className="nav-link" to="/anemia-detection">Anemia Detection</Link>
           <Link className="nav-link" to="/find-location">Find Location</Link>
         </div>
         <Link to="/login">
@@ -37,10 +49,10 @@ function Header() {
         </Link>
       </nav>
       <button onClick={toggleTheme} className="theme-toggle-button">
-          Switch to {theme === 'dark' ? 'light' : 'dark'} theme
-        </button>
+        Switch to {theme === 'dark' ? 'light' : 'dark'} theme
+      </button>
     </header>
   );
-}
+};
 
 export default Header;

@@ -1,57 +1,182 @@
+/* Define light and dark theme colors */
+.theme-light {
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --form-background: #ffffff;
+    --button-background: #007bff;
+    --button-hover: #0056b3;
+    --label-color: #555;
+    --border-color: #ddd;
+}
+
+.theme-dark {
+    --background-color: #212529;
+    --text-color: #ffffff;
+    --form-background: #343a40;
+    --button-background: #007bff;
+    --button-hover: #0056b3;
+    --label-color: #ccc;
+    --border-color: #444;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', "Noto Sans", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Login container */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f8f9fa;
-  }
-  
-  .login-form-container {
-    background: white;
+}
+
+/* Form container */
+.login-form-container {
+    background: var(--form-background);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px;
-  }
-  
-  .login-title {
+}
+
+/* Title */
+.login-title {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
-  }
-  
-  .login-form {
+    color: var(--text-color);
+}
+
+/* Form inputs */
+.login-form {
     display: flex;
     flex-direction: column;
-  }
-  
-  .login-input-group {
+}
+
+.login-input-group {
     margin-bottom: 15px;
-  }
-  
-  .login-input-group label {
+}
+
+.login-input-group label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
-  }
-  
-  .login-input-group input {
+    color: var(--label-color);
+}
+
+.login-input-group input {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
-  }
-  
-  .login-button {
+}
+
+/* Login button */
+.login-button {
     padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--button-background);
+    color: var(--text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .login-button:hover {
-    background-color: #0056b3;
-  }
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: var(--button-hover);
+}
+/* Define light and dark theme colors */
+.theme-light {
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --form-background: #ffffff;
+    --button-background: #007bff;
+    --button-hover: #0056b3;
+    --label-color: #555;
+    --border-color: #ddd;
+}
+
+.theme-dark {
+    --background-color: #212529;
+    --text-color: #ffffff;
+    --form-background: #343a40;
+    --button-background: #007bff;
+    --button-hover: #0056b3;
+    --label-color: #ccc;
+    --border-color: #444;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', "Noto Sans", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form container */
+.login-form-container {
+    background: var(--form-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Title */
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+/* Form inputs */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input-group {
+    margin-bottom: 15px;
+}
+
+.login-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--label-color);
+}
+
+.login-input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Login button */
+.login-button {
+    padding: 10px;
+    background-color: var(--button-background);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: var(--button-hover);
+}
