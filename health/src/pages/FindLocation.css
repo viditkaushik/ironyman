@@ -1,0 +1,247 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Manrope, "Noto Sans", sans-serif;
+  }
+  
+  .location-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: black;
+    overflow-x: hidden;
+  }
+  
+  .layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    border-bottom: 1px solid #292929;
+    color: #FFFFFF;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .logo {
+    width: 32px;
+  }
+  
+  .logo-text {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: -0.015em;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .search-label {
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    height: 40px;
+  }
+  
+  .search-input-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+  }
+  
+  .search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 16px;
+    background-color: #292929;
+    border-radius: 16px 0 0 16px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding-left: 8px;
+    background-color: #292929;
+    border: none;
+    border-radius: 0 16px 16px 0;
+    color: #FFFFFF;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px 160px;
+    flex-grow: 1;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 920px;
+    width: 100%;
+  }
+  
+  .map-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    background-image: url('https://cdn.usegalileo.ai/maps/81060bb0-dbb9-4065-8a4a-fcdb5742247a.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    min-height: 320px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+  }
+  
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 40px;
+  }
+  
+  .map-search-label {
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    height: 40px;
+  }
+  
+  .map-search-input-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+  }
+  
+  .map-search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 16px;
+    background-color: #212121;
+    border-radius: 16px 0 0 16px;
+  }
+  
+  .map-search-input {
+    flex: 1;
+    padding-left: 8px;
+    background-color: #212121;
+    border: none;
+    border-radius: 0 16px 16px 0;
+    color: #FFFFFF;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .map-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+  
+  .zoom-controls {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .zoom-button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+    border-radius: 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navigation-button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stores-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  
+  .stores-title {
+    color: #FFFFFF;
+    font-size: 1.375rem;
+    font-weight: bold;
+    letter-spacing: -0.015em;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+  
+  .store-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 16px;
+    min-height: 72px;
+    margin-bottom: 8px;
+  }
+  
+  .store-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .store-name {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .store-distance {
+    color: #ABABAB;
+    font-size: 0.875rem;
+  }
+  
+  .store-direction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+  }
