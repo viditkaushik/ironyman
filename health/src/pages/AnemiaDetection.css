@@ -1,0 +1,332 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Manrope, "Noto Sans", sans-serif;
+  }
+  
+  .anemia-detection-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: black;
+    overflow-x: hidden;
+  }
+  
+  .layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px 160px;
+    flex-grow: 1;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    width: 100%;
+  }
+  
+  .title {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -0.033em;
+    min-width: 72px;
+  }
+  
+  .section-title {
+    color: #FFFFFF;
+    font-size: 1.375rem;
+    font-weight: bold;
+    letter-spacing: -0.015em;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+  
+  .grid {
+    display: grid;
+  }
+  
+  .step-text {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .line {
+    width: 1.5px;
+    background-color: #303030;
+    height: 2px;
+  }
+  
+  .section-content {
+    padding: 0 16px;
+  }
+  
+  .trend {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+  }
+  
+  .trend-title {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .trend-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .trend-dates {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .trend-dates p {
+    color: #ABABAB;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .diet-plan {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .diet-item {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    aspect-ratio: 1/1;
+  }
+  
+  .medicine {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: black;
+    padding: 16px;
+    min-height: 72px;
+    justify-content: space-between;
+  }
+  
+  .medicine-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #292929;
+    border-radius: 8px;
+  }
+  
+  .medicine-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .medicine-name {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .medicine-type {
+    color: #ABABAB;
+    font-size: 0.875rem;
+  }
+  
+  .medicine-price {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  .store {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: black;
+    padding: 16px;
+    min-height: 72px;
+    justify-content: space-between;
+  }
+  
+  .store-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #292929;
+    border-radius: 8px;
+  }
+  
+  .store-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .store-name {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .store-address {
+    color: #ABABAB;
+    font-size: 0.875rem;
+  }
+  
+  .get-directions-button {
+    padding: 0 16px;
+    height: 32px;
+    background-color: #292929;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  
+  .side-info {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+  }
+  
+  .info-box {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    background-color: #292929;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .info-text {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+  }
+  
+  .info-title {
+    color: #ABABAB;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+  
+  .info-value {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .info-description {
+    color: #ABABAB;
+    font-size: 0.875rem;
+  }
+  
+  .info-image {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    flex: 1;
+  }
+  
+  .side-info-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .download-report-button,
+  .start-chat-button {
+    flex: 1;
+    padding: 0 16px;
+    height: 40px;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  
+  .download-report-button {
+    background-color: #292929;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .start-chat-button {
+    background-color: #EA2831;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .chat-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .need-help-title {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  
+  .help-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: black;
+    padding: 16px;
+    min-height: 72px;
+    justify-content: space-between;
+  }
+  
+  .help-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #292929;
+    border-radius: 8px;
+  }
+  
+  .help-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .help-title {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .help-value {
+    color: #ABABAB;
+    font-size: 0.875rem;
+  }
+  
+  .help-status {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 400;
+  }
