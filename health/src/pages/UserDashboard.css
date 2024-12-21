@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+    font-family: 'Manrope', 'Noto Sans', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .layout-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 1px solid #292929;
+    background-color: #1f1f1f;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .nav-link.active {
+    text-decoration: underline;
+  }
+  
+  .logout-button {
+    background-color: #292929;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+    flex: 1;
+    background-color: #121212;
+  }
+  
+  .content-container {
+    max-width: 960px;
+    width: 100%;
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .profile-title {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile-picture {
+    width: 128px;
+    height: 128px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-name {
+    font-size: 1.375rem;
+    font-weight: bold;
+  }
+  
+  .profile-meta {
+    color: #ababab;
+  }
+  
+  .edit-button {
+    background-color: #292929;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .section {
+    padding: 20px 0;
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .info-item,
+  .address-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    width: 48px;
+    height: 48px;
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  
+  .info-details,
+  .address-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-label,
+  .address-label {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .info-value,
+  .address-line {
+    color: #ababab;
+    font-size: 0.875rem;
+  }
+  
+  .add-pharmacy {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+  }
+  
+  .add-pharmacy-button {
+    background-color: #292929;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: #1f1f1f;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+  }
+  
+  .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .modal-body label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .modal-body input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #292929;
+    color: #fff;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modal-save-button,
+  .modal-cancel-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-save-button {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .modal-cancel-button {
+    background-color: #f44336;
+    color: #fff;
+  }

@@ -1,5 +1,7 @@
 import React from 'react';
 import './Home.css'; // Import the CSS for the Home component
+import Header from '../components/Header'; // Adjust the path as necessary
+import Footer from '../components/Footer';
 
 function Home() {
   return (
@@ -10,38 +12,6 @@ function Home() {
         <Footer />
       </div>
     </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className="header">
-      <div className="logo-container">
-        <div className="logo">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_6_330)">
-              <path fillRule="evenodd" clipRule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
-            </g>
-            <defs>
-              <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
-            </defs>
-          </svg>
-        </div>
-        <h2 className="logo-text">Health AI</h2>
-      </div>
-      <nav className="nav">
-        <div className="nav-links">
-          <a className="nav-link" href="#">Services</a>
-          <a className="nav-link" href="#">Pricing</a>
-          <a className="nav-link" href="#">About</a>
-          <a className="nav-link" href="#">Blog</a>
-        </div>
-        <div className="nav-buttons">
-          <button className="sign-up-button">Sign Up</button>
-          <button className="log-in-button">Log In</button>
-        </div>
-      </nav>
-    </header>
   );
 }
 
@@ -92,22 +62,6 @@ function AnemiaTestSection() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-links">
-          <a className="footer-link" href="#">Terms of Use</a>
-          <a className="footer-link" href="#">Privacy Policy</a>
-          <a className="footer-link" href="#">Accessibility</a>
-          <a className="footer-link" href="#">Security</a>
-        </div>
-        <p className="footer-text">@2022 Health AI</p>
-      </div>
-    </footer>
   );
 }
 

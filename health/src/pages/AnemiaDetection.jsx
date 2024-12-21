@@ -1,5 +1,16 @@
 import React from 'react';
 import './AnemiaDetection.css'; // Import the CSS for the AnemiaDetection component
+import {
+    CameraIcon,
+    MagnifyingGlassIcon,
+    OrangeSliceIcon,
+    PillIcon,
+    MapPinIcon,
+    ChatCircleDotsIcon,
+    ClockIcon,
+    EnvelopeOpenIcon,
+    PhoneIcon
+} from '../components/Icons';
 
 function AnemiaDetection() {
   return (
@@ -46,6 +57,31 @@ function AnemiaDetection() {
   );
 }
 
+function Icon({ name }) {
+  switch (name) {
+    case 'Camera':
+      return <CameraIcon />;
+    case 'MagnifyingGlass':
+      return <MagnifyingGlassIcon />;
+    case 'OrangeSlice':
+      return <OrangeSliceIcon />;
+    case 'Pill':
+      return <PillIcon />;
+    case 'MapPin':
+      return <MapPinIcon />;
+    case 'ChatCircleDots':
+      return <ChatCircleDotsIcon />;
+    case 'Clock':
+      return <ClockIcon />;
+    case 'EnvelopeOpen':
+      return <EnvelopeOpenIcon />;
+    case 'Phone':
+      return <PhoneIcon />;
+    default:
+      return null;
+  }
+}
+
 function Step({ icon, description }) {
   return (
     <div className="step">
@@ -72,13 +108,13 @@ function Trend() {
           <path
             d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
             stroke="#ABABAB"
-            stroke-width="3"
-            stroke-linecap="round"
+            strokeWidth="3"
+            strokeLinecap="round"
           ></path>
           <defs>
             <linearGradient id="paint0_linear_1131_5935" x1="236" y1="1" x2="236" y2="149" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#292929"></stop>
-              <stop offset="1" stop-color="#292929" stop-opacity="0"></stop>
+              <stop stopColor="#292929"></stop>
+              <stop offset="1" stopColor="#292929" stopOpacity="0"></stop>
             </linearGradient>
           </defs>
         </svg>
@@ -210,44 +246,5 @@ function HelpItem({ title, description, status, icon }) {
     </div>
   );
 }
-
-function Icon({ name }) {
-  switch (name) {
-    case 'Camera':
-      return <CameraIcon />;
-    case 'MagnifyingGlass':
-      return <MagnifyingGlassIcon />;
-    case 'OrangeSlice':
-      return <OrangeSliceIcon />;
-    case 'Pill':
-      return <PillIcon />;
-    case 'MapPin':
-      return <MapPinIcon />;
-    case 'ChatCircleDots':
-      return <ChatCircleDotsIcon />;
-    case 'Clock':
-      return <ClockIcon />;
-    case 'EnvelopeOpen':
-      return <EnvelopeOpenIcon />;
-    case 'Phone':
-      return <PhoneIcon />;
-    default:
-      return null;
-  }
-}
-
-// Define all these icons as separate functional components
-// For example:
-function CameraIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-      <path
-        d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"
-      ></path>
-    </svg>
-  );
-}
-
-// Similarly, define other icons like MagnifyingGlassIcon, OrangeSliceIcon, PillIcon, MapPinIcon, ChatCircleDotsIcon, ClockIcon, EnvelopeOpenIcon, PhoneIcon
 
 export default AnemiaDetection;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'; // Import the CSS for the Header component
-
+import './assets/css/themes.css';
 function Header() {
   return (
     <header className="header">
@@ -27,13 +27,18 @@ function Header() {
         <div className="nav-links">
           <Link className="nav-link" to="/">Home</Link>
           <Link className="nav-link" to="/about-us">About Us</Link>
+          <Link className="nav-link" to="/anemia-detection">Anemia Detection</Link> {/* New Link Added */}
           <Link className="nav-link" to="/find-location">Find Location</Link>
-          <Link className="nav-link" to="/pricing">Pricing</Link>
         </div>
-        <button className="login-button">
-          <span className="truncate">Log in</span>
-        </button>
+        <Link to="/login">
+          <button className="login-button">
+            <span className="truncate">Log in</span>
+          </button>
+        </Link>
       </nav>
+      <button onClick={toggleTheme} className="theme-toggle-button">
+          Switch to {theme === 'dark' ? 'light' : 'dark'} theme
+        </button>
     </header>
   );
 }
