@@ -4,6 +4,9 @@ import './Home.css'; // Import the CSS for the Home component
 function Home({ theme, toggleTheme }) {
   return (
     <div className="home-container">
+      <video className="background-video" autoPlay loop muted>
+        <source src="/videos/video-2.mp4" type="video/mp4" />
+      </video>
       <div className="layout-container">
         <MainContent />
       </div>
