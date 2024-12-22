@@ -18,6 +18,9 @@ function AboutUs() {
 
   return (
     <div className="aboutus-container">
+      <video className="background-video" autoPlay loop muted>
+        <source src="/videos/video-2.mp4" type="video/mp4" />
+      </video>
       <div className="layout-container">
         <MainContent toggleTheme={toggleTheme} />
       </div>
