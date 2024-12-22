@@ -33,7 +33,7 @@ const Header = ({ theme, toggleTheme }) => {
             </defs>
           </svg>
         </div>
-        <h2 className="logo-text">Health AI</h2>
+        <h2 className="logo-text">Ironyman</h2>
       </div>
       <nav className="nav">
         <div className="nav-links">

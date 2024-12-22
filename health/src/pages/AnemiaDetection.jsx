@@ -2,12 +2,19 @@ import React, { useContext } from 'react';
 import './AnemiaDetection.css'; // Ensure this CSS file contains the necessary styles
 import { ThemeContext } from '../ThemeContext'; // Context to handle dark/light themes
 import { CameraIcon, ChatCircleDotsIcon, ClockIcon, EnvelopeOpenIcon, MagnifyingGlassIcon, MapPinIcon, OrangeSliceIcon, PhoneIcon, PillIcon } from '../components/Icons';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 
-const UserDashboard = () => {
+const AnemiaDetection = () => {
   const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate(); // Use navigate to redirect to the Upload page
+
+  // Function to redirect to the Upload page when the camera icon is clicked
+  const handleCameraClick = () => {
+    navigate('/upload'); // Redirect to the Upload page
+  };
 
   return (
-    <div className={`user-dashboard ${theme}`}>
+    <div className={`anemia-detection ${theme}`}>
       <div className="layout-container">
         {/* Header Section */}
         <header className="header">
@@ -15,13 +22,6 @@ const UserDashboard = () => {
             <h2>Ironyman</h2>
           </div>
           <div className="header-right">
-            <nav>
-              <a href="#">Home</a>
-              <a href="#">Services</a>
-              <a href="#">AI Models</a>
-              <a href="#">Data Annotation</a>
-              <a href="#">Docs</a>
-            </nav>
             <div className="header-buttons">
               <button><MagnifyingGlassIcon /></button>
               <button><ClockIcon /></button>
@@ -50,6 +50,12 @@ const UserDashboard = () => {
                 <OrangeSliceIcon />
                 <p>AI suggested a diet plan to improve your health</p>
               </div>
+            </div>
+
+            {/* Big Camera Icon to Upload */}
+            <div className="big-camera-icon" onClick={handleCameraClick}>
+              <CameraIcon style={{ fontSize: '80px', cursor: 'pointer' }} />
+              <p>Click here to upload your photo</p>
             </div>
 
             {/* Hemoglobin Trend Chart */}
@@ -162,7 +168,13 @@ const UserDashboard = () => {
                   <p>Support Hours</p>
                   <p>Mon-Fri, 9am-5pm (PST)</p>
                 </div>
-                <p>Open</p>
+              </div>
+              <div className="support-item">
+                <PhoneIcon />
+                <div className="support-text">
+                  <p>Phone</p>
+                  <p>+1-800-555-1234</p>
+                </div>
               </div>
               <div className="support-item">
                 <EnvelopeOpenIcon />
@@ -170,15 +182,6 @@ const UserDashboard = () => {
                   <p>Email</p>
                   <p>support@ironyman.com</p>
                 </div>
-                <p>support@ironyman.com</p>
-              </div>
-              <div className="support-item">
-                <PhoneIcon />
-                <div className="support-text">
-                  <p>Phone</p>
-                  <p>1-800-234-5678</p>
-                </div>
-                <p>1-800-234-5678</p>
               </div>
             </div>
           </div>
@@ -188,4 +191,4 @@ const UserDashboard = () => {
   );
 };
 
-export default UserDashboard;
+export default AnemiaDetection;

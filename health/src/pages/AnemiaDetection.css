@@ -278,3 +278,17 @@
     justify-content: center;
   }
   
+  /* Camera Icon Section */
+  .camera-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+  
+  .camera-icon {
+    font-size: 6rem; /* Large camera icon */
+    color: var(--primary-color);
+  }
+  
