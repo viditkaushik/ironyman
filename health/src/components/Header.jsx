@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'; // Import the CSS for the Header component
+import './Header.css'; // Ensure the CSS is correct
 import '../assets/css/themes.css'; // Ensure the path is correct
 
 const Header = ({ theme, toggleTheme }) => {
@@ -17,6 +17,7 @@ const Header = ({ theme, toggleTheme }) => {
 
   return (
     <header className="header">
+      {/* Logo Section */}
       <div className="logo-container">
         <div className="logo">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,25 +30,34 @@ const Header = ({ theme, toggleTheme }) => {
               ></path>
             </g>
             <defs>
-              <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
+              <clipPath id="clip0_6_330">
+                <rect width="48" height="48" fill="white"></rect>
+              </clipPath>
             </defs>
           </svg>
         </div>
         <h2 className="logo-text">Ironyman</h2>
       </div>
+
+      {/* Navigation Section */}
       <nav className="nav">
         <div className="nav-links">
           <Link className="nav-link" to="/">Home</Link>
           <Link className="nav-link" to="/about-us">About Us</Link>
           <Link className="nav-link" to="/anemia-detection">Anemia Detection</Link>
+          <Link className="nav-link" to="/generic-medicine-finder">Generic Medicine Finder</Link>
           <Link className="nav-link" to="/find-location">Find Location</Link>
         </div>
+
+        {/* Login Button */}
         <Link to="/login">
           <button className="login-button">
             <span className="truncate">Log in</span>
           </button>
         </Link>
       </nav>
+
+      {/* Theme Toggle Button */}
       <button
         onClick={toggleTheme}
         className="theme-toggle-button"
