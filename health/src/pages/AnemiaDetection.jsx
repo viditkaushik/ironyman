@@ -11,7 +11,7 @@ const AnemiaDetection = () => {
       <div className="layout-container">
         <header className="header">
           <div className="header-left">
-            <h2>Health AI</h2>
+            <h2>Ironyman</h2>
           </div>
           <div className="header-right">
             <nav>
@@ -163,9 +163,9 @@ const AnemiaDetection = () => {
                 <EnvelopeOpenIcon />
                 <div className="support-text">
                   <p>Email</p>
-                  <p>support@healthai.com</p>
+                  <p>support@ironyman.com</p>
                 </div>
-                <p>support@healthai.com</p>
+                <p>support@ironyman.com</p>
               </div>
               <div className="support-item">
                 <PhoneIcon />

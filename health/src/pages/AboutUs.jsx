@@ -6,7 +6,7 @@ function AboutUs() {
 
   useEffect(() => {
     // Update the body class whenever the theme changes
-    document.body.className = theme;
+    document.documentElement.className = theme; // Use documentElement to apply CSS variables globally
   }, [theme]);
 
   const toggleTheme = () => {

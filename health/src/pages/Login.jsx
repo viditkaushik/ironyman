@@ -1,36 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // Import the CSS for the Login component
+import './Login.css';
 
-function Login() {
+function Login({ theme }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [theme, setTheme] = useState('theme-light'); // Default theme
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Update the body class whenever the theme changes
-    document.body.className = theme;
+    // Apply the current theme to the body
+    if (theme === 'dark') {
+      document.body.classList.add('theme-dark');
+      document.body.classList.remove('theme-light');
+    } else {
+      document.body.classList.add('theme-light');
+      document.body.classList.remove('theme-dark');
+    }
   }, [theme]);
-
-  const toggleTheme = () => {
-    // Toggle between light and dark themes
-    setTheme((prevTheme) =>
-      prevTheme === 'theme-light' ? 'theme-dark' : 'theme-light'
-    );
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add authentication logic here
+    // Authentication logic here
 
-    // Redirect to the user dashboard after successful login
+    // Navigate to the dashboard after login
     navigate('/user-dashboard');
   };
 
   return (
     <div className="login-container">
-      <div className="login-form-container">
+      <div className={`login-form-container ${theme === 'dark' ? 'dark' : 'light'}`}>
         <h2 className="login-title">Log in to your account</h2>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="login-input-group">
@@ -55,7 +53,6 @@ function Login() {
           </div>
           <button type="submit" className="login-button">Log In</button>
         </form>
-        <button onClick={toggleTheme} className="login-button">Toggle Theme</button>
       </div>
     </div>
   );

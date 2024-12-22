@@ -48,7 +48,14 @@ const Header = ({ theme, toggleTheme }) => {
           </button>
         </Link>
       </nav>
-      <button onClick={toggleTheme} className="theme-toggle-button">
+      <button
+        onClick={toggleTheme}
+        className="theme-toggle-button"
+        style={{
+          color: theme === 'dark' ? '#ffffff' : '#000000',
+          backgroundColor: theme === 'dark' ? '#333333' : '#f5f5f5', // Dark background for light mode, light for dark mode
+        }}
+      >
         Switch to {theme === 'dark' ? 'light' : 'dark'} theme
       </button>
     </header>

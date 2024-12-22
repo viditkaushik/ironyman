@@ -8,15 +8,15 @@
 }
 
 .theme-toggle-button {
-  background-color: var(--text-color);
-  color: var(--background-color);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
+    background-color: var(--button-background); /* Use variable for background */
+    color: var(--button-text-color); /* Use variable for text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
 .theme-toggle-button:hover {
   opacity: 0.8;
 }

@@ -1,29 +1,39 @@
-/* Define light and dark theme colors */
-.theme-light {
-    --background-color: #f8f9fa;
-    --text-color: #333;
-    --form-background: #ffffff;
-    --button-background: #007bff;
-    --button-hover: #0056b3;
-    --label-color: #555;
-    --border-color: #ddd;
-}
-
-.theme-dark {
-    --background-color: #212529;
-    --text-color: #ffffff;
-    --form-background: #343a40;
-    --button-background: #007bff;
-    --button-hover: #0056b3;
-    --label-color: #ccc;
-    --border-color: #444;
-}
-
+/* General styles for themes */
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Manrope', "Noto Sans", sans-serif;
-    background-color: var(--background-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Light theme styles */
+.theme-light {
+    --background-color: #f0f4f8;
+    --text-color: #000000;
+    --form-background: #ffffff;
+    --input-border-color: #ddd;
+    --button-background: #007bff;
+    --button-hover: #0056b3;
+}
+
+/* Dark theme styles with gradients */
+.theme-dark {
+    --background-color: linear-gradient(135deg, #181818, #1f1f1f, #252525);
+    --text-color: #ffffff;
+    --form-background: #2b2b2b;
+    --input-border-color: #555;
+    --button-background: #007bff;
+    --button-hover: #0056b3;
+}
+
+/* Background color transitions */
+body.theme-light {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+body.theme-dark {
+    background: var(--background-color);
     color: var(--text-color);
 }
 
@@ -33,23 +43,35 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px;
 }
 
 /* Form container */
 .login-form-container {
-    background: var(--form-background);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.login-form-container.light {
+    background-color: var(--form-background);
+    color: var(--text-color);
+}
+
+.login-form-container.dark {
+    background-color: var(--form-background);
+    color: var(--text-color);
 }
 
 /* Title */
 .login-title {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 24px;
-    color: var(--text-color);
+    font-weight: 600;
 }
 
 /* Form inputs */
@@ -59,124 +81,43 @@ html, body {
 }
 
 .login-input-group {
-    margin-bottom: 15px;
-}
-
-.login-input-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--label-color);
-}
-
-.login-input-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-}
-
-/* Login button */
-.login-button {
-    padding: 10px;
-    background-color: var(--button-background);
-    color: var(--text-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-    background-color: var(--button-hover);
-}
-/* Define light and dark theme colors */
-.theme-light {
-    --background-color: #f8f9fa;
-    --text-color: #333;
-    --form-background: #ffffff;
-    --button-background: #007bff;
-    --button-hover: #0056b3;
-    --label-color: #555;
-    --border-color: #ddd;
-}
-
-.theme-dark {
-    --background-color: #212529;
-    --text-color: #ffffff;
-    --form-background: #343a40;
-    --button-background: #007bff;
-    --button-hover: #0056b3;
-    --label-color: #ccc;
-    --border-color: #444;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Manrope', "Noto Sans", sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-/* Login container */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* Form container */
-.login-form-container {
-    background: var(--form-background);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-
-/* Title */
-.login-title {
-    text-align: center;
     margin-bottom: 20px;
-    font-size: 24px;
-    color: var(--text-color);
-}
-
-/* Form inputs */
-.login-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.login-input-group {
-    margin-bottom: 15px;
 }
 
 .login-input-group label {
     display: block;
-    margin-bottom: 5px;
-    color: var(--label-color);
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
 .login-input-group input {
     width: 100%;
-    padding: 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.login-input-group input:focus {
+    outline: none;
+    border-color: #007bff;
 }
 
 /* Login button */
 .login-button {
-    padding: 10px;
+    padding: 12px;
     background-color: var(--button-background);
-    color: var(--text-color);
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .login-button:hover {
     background-color: var(--button-hover);
+    transform: scale(1.02);
 }

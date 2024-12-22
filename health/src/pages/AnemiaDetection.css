@@ -1,4 +1,22 @@
-.anemia-detection {
+:root {
+    --background-color: #000;
+    --text-color: #fff;
+    --border-color: #292929;
+    --button-bg-color: #EA2831; /* Changed from grey to red */
+    --primary-color: #EA2831;  /* Changed from grey to red */
+    --secondary-text-color: #ABABAB;
+  }
+  
+  .light-mode {
+    --background-color: #fff;
+    --text-color: #000;
+    --border-color: #ccc;
+    --button-bg-color: #EA2831; /* Changed from grey to red */
+    --primary-color: #EA2831;  /* Changed from grey to red */
+    --secondary-text-color: #666;
+  }
+  
+  .anemia-detection {
     font-family: 'Manrope', 'Noto Sans', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -38,7 +56,7 @@
   }
   
   .header-buttons button {
-    background-color: var(--button-bg-color);
+    background-color: var(--button-bg-color); /* Updated to use red */
     color: var(--text-color);
     border: none;
     border-radius: 0.75rem;
@@ -139,12 +157,12 @@
   }
   
   .download-report {
-    background-color: var(--button-bg-color);
+    background-color: var(--button-bg-color); /* Updated to use red */
     color: var(--text-color);
   }
   
   .start-chat {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Updated to use red */
     color: var(--text-color);
     display: flex;
     align-items: center;
@@ -178,7 +196,7 @@
   }
   
   .get-directions {
-    background-color: var(--button-bg-color);
+    background-color: var(--button-bg-color); /* Updated to use red */
     color: var(--text-color);
     border: none;
     border-radius: 0.75rem;
@@ -194,25 +212,4 @@
     color: var(--secondary-text-color);
   }
   
-  :root {
-    --background-color: #000;
-    --text-color: #fff;
-    --border-color: #292929;
-    --button-bg-color: #292929;
-    --primary-color: #EA2831;
-    --secondary-text-color: #ABABAB;
-  }
   
-  .light-mode {
-    --background-color: #fff;
-    --text-color: #000;
-    --border-color: #ccc;
-    --button-bg-color: #f0f0f0;
-    --primary-color: #007bff;
-    --secondary-text-color: #666;
-  }
-  .anemia-detection {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    /* Add more styles as needed */
-  }
