@@ -2,8 +2,8 @@
     --background-color: #000;
     --text-color: #fff;
     --border-color: #292929;
-    --button-bg-color: #EA2831; /* Changed from grey to red */
-    --primary-color: #EA2831;  /* Changed from grey to red */
+    --button-bg-color: #EA2831; /* Red button background */
+    --primary-color: #EA2831;  /* Primary red color */
     --secondary-text-color: #ABABAB;
   }
   
@@ -11,8 +11,8 @@
     --background-color: #fff;
     --text-color: #000;
     --border-color: #ccc;
-    --button-bg-color: #EA2831; /* Changed from grey to red */
-    --primary-color: #EA2831;  /* Changed from grey to red */
+    --button-bg-color: #EA2831; /* Red button background */
+    --primary-color: #EA2831;  /* Primary red color */
     --secondary-text-color: #666;
   }
   
@@ -56,7 +56,7 @@
   }
   
   .header-buttons button {
-    background-color: var(--button-bg-color); /* Updated to use red */
+    background-color: var(--button-bg-color); /* Red background */
     color: var(--text-color);
     border: none;
     border-radius: 0.75rem;
@@ -78,6 +78,7 @@
     display: flex;
     flex-wrap: wrap;
     padding: 2rem 1.5rem;
+    gap: 2rem;
   }
   
   .content-main {
@@ -157,12 +158,12 @@
   }
   
   .download-report {
-    background-color: var(--button-bg-color); /* Updated to use red */
+    background-color: var(--button-bg-color); /* Red button background */
     color: var(--text-color);
   }
   
   .start-chat {
-    background-color: var(--primary-color); /* Updated to use red */
+    background-color: var(--primary-color); /* Red background */
     color: var(--text-color);
     display: flex;
     align-items: center;
@@ -196,7 +197,7 @@
   }
   
   .get-directions {
-    background-color: var(--button-bg-color); /* Updated to use red */
+    background-color: var(--button-bg-color); /* Red background */
     color: var(--text-color);
     border: none;
     border-radius: 0.75rem;
@@ -212,4 +213,68 @@
     color: var(--secondary-text-color);
   }
   
+  .ai-result-step, .medicine-item, .support-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .sidebar-section {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .sidebar-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-value {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar-image {
+    flex: 1;
+    background-size: cover;
+    border-radius: 0.75rem;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .download-report, .start-chat {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .download-report {
+    background-color: var(--button-bg-color); /* Red button background */
+    color: var(--text-color);
+  }
+  
+  .start-chat {
+    background-color: var(--primary-color); /* Red background */
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
   

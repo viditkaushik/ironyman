@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './UserDashboard.css'; // Import the CSS for the UserDashboard component
 
 function UserDashboard() {
@@ -15,14 +15,10 @@ function UserDashboard() {
     state: 'CA',
     zip: '94107'
   });
+  const [theme, setTheme] = useState('light'); // State for the theme (light or dark)
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-  };
-
-  const handleLogout = () => {
-    // Handle logout logic here
-    alert('Logged out');
   };
 
   const handleEdit = () => {
@@ -36,76 +32,84 @@ function UserDashboard() {
     setEditModalOpen(false);
   };
 
-  const handleAddPharmacy = () => {
-    // Handle add pharmacy logic here
-    alert('Add new pharmacy');
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('theme-dark');
+      document.body.classList.remove('theme-light');
+    } else {
+      document.body.classList.add('theme-light');
+      document.body.classList.remove('theme-dark');
+    }
+  }, [theme]);
 
   return (
     <div className="dashboard-container">
       <div className="layout-container">
-        <header className="dashboard-header">
-          <div className="header-left">
-            <div className="logo">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
-              </svg>
-            </div>
-            <h2 className="brand">MediScan</h2>
-          </div>
-          <div className="header-right">
-            <nav className="nav-links">
-              <a className={`nav-link ${activeTab === 'Home' ? 'active' : ''}`} onClick={() => handleTabClick('Home')} href="#">Home</a>
-              <a className={`nav-link ${activeTab === 'Profile' ? 'active' : ''}`} onClick={() => handleTabClick('Profile')} href="#">Profile</a>
-              <a className={`nav-link ${activeTab === 'History' ? 'active' : ''}`} onClick={() => handleTabClick('History')} href="#">History</a>
-              <a className={`nav-link ${activeTab === 'Support' ? 'active' : ''}`} onClick={() => handleTabClick('Support')} href="#">Support</a>
-            </nav>
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
-          </div>
-        </header>
         <div className="dashboard-content">
           <div className="content-container">
-            {activeTab === 'Home' && <Home />}
-            {activeTab === 'Profile' && <Profile profile={profile} onEdit={handleEdit} onAddPharmacy={handleAddPharmacy} />}
-            {activeTab === 'History' && <History />}
-            {activeTab === 'Support' && <Support />}
+            <nav className="nav-links">
+              <a
+                className={`nav-link ${activeTab === 'Profile' ? 'active' : ''}`}
+                onClick={() => handleTabClick('Profile')}
+                href="#"
+              >
+                Profile
+              </a>
+            </nav>
+
+            {/* Only show Profile section */}
+            {activeTab === 'Profile' && (
+              <Profile profile={profile} onEdit={handleEdit} />
+            )}
           </div>
         </div>
-        {isEditModalOpen && <EditProfileModal profile={profile} onSave={handleSaveProfile} onCancel={() => setEditModalOpen(false)} />}
+        {isEditModalOpen && (
+          <EditProfileModal profile={profile} onSave={handleSaveProfile} onCancel={() => setEditModalOpen(false)} />
+        )}
       </div>
     </div>
   );
 }
 
-function Home() {
-  return (
-    <div>
-      <h3 className="section-title">Welcome to MediScan</h3>
-      <p>This is the home section. Add your content here.</p>
-    </div>
-  );
-}
-
-function Profile({ profile, onEdit, onAddPharmacy }) {
+function Profile({ profile, onEdit }) {
   return (
     <div>
       <div className="profile-header">
         <p className="profile-title">Your Profile</p>
       </div>
       <div className="profile-section">
-        <div className="profile-info">
-          <div className="profile-picture" style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/0adffab9-e3bd-47a4-b7ab-7f446a48d160.png")' }}></div>
-          <div className="profile-details">
-            <p className="profile-name">{profile.name}</p>
-            <p className="profile-meta">{profile.gender}, Age {profile.age}</p>
-          </div>
+        <div
+          className="profile-picture"
+          style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/0adffab9-e3bd-47a4-b7ab-7f446a48d160.png")' }}
+        ></div>
+        <div className="profile-details">
+          <p className="profile-name">{profile.name}</p>
+          <p className="profile-meta">
+            {profile.gender}, Age {profile.age}
+          </p>
         </div>
-        <button className="edit-button" onClick={onEdit}>Edit</button>
+        <button className="edit-button" onClick={onEdit}>
+          Edit
+        </button>
       </div>
       <Section title="Personal Information">
         <InfoItem icon="EnvelopeOpen" label="Email" value={profile.email} />
-        <AddressItem icon="HouseSimple" label="Home Address" address1={profile.homeAddress} address2={`${profile.city}, ${profile.state} ${profile.zip}`} />
-        <AddressItem icon="Truck" label="Shipping Address" address1={profile.shippingAddress} address2={`${profile.city}, ${profile.state} ${profile.zip}`} />
+        <AddressItem
+          icon="HouseSimple"
+          label="Home Address"
+          address1={profile.homeAddress}
+          address2={`${profile.city}, ${profile.state} ${profile.zip}`}
+        />
+        <AddressItem
+          icon="Truck"
+          label="Shipping Address"
+          address1={profile.shippingAddress}
+          address2={`${profile.city}, ${profile.state} ${profile.zip}`}
+        />
       </Section>
       <Section title="Medical History">
         <InfoItem icon="FileZip" label="Conditions" value="None" />
@@ -115,28 +119,7 @@ function Profile({ profile, onEdit, onAddPharmacy }) {
       <Section title="Preferred Pharmacies">
         <InfoItem icon="Factory" label="CVS" value="123 Main St." />
         <InfoItem icon="Factory" label="Walgreens" value="456 Main St." />
-        <div className="add-pharmacy">
-          <button className="add-pharmacy-button" onClick={onAddPharmacy}>Add Pharmacy</button>
-        </div>
       </Section>
-    </div>
-  );
-}
-
-function History() {
-  return (
-    <div>
-      <h3 className="section-title">Medical History</h3>
-      <p>This is the history section. Add your content here.</p>
-    </div>
-  );
-}
-
-function Support() {
-  return (
-    <div>
-      <h3 className="section-title">Support</h3>
-      <p>This is the support section. Add your content here.</p>
     </div>
   );
 }
@@ -190,7 +173,7 @@ function EditProfileModal({ profile, onSave, onCancel }) {
     const { name, value } = e.target;
     setUpdatedProfile((prevProfile) => ({
       ...prevProfile,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -241,8 +224,12 @@ function EditProfileModal({ profile, onSave, onCancel }) {
           </label>
         </div>
         <div className="modal-footer">
-          <button onClick={handleSave} className="modal-save-button">Save</button>
-          <button onClick={onCancel} className="modal-cancel-button">Cancel</button>
+          <button onClick={handleSave} className="modal-save-button">
+            Save
+          </button>
+          <button onClick={onCancel} className="modal-cancel-button">
+            Cancel
+          </button>
         </div>
       </div>
     </div>

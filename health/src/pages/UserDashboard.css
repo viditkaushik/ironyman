@@ -1,284 +1,280 @@
-/* General Styles */
+/* UserDashboard.css */
+
+/* Define variables for light and dark mode */
+:root {
+    --background-light: #ffffff;  /* White background for light mode */
+    --background-dark: #000000;   /* Black background for dark mode */
+    --primary-color-light: #ff0000; /* Red button color for light mode */
+    --primary-color-dark: #ff0000;  /* Red button color for dark mode */
+    --text-color-light: #000000;   /* Black text for light mode */
+    --text-color-dark: #ffffff;    /* White text for dark mode */
+    --card-background-light: #fff;
+    --card-background-dark: #3b3b3b;
+    --border-color-light: #ccc;
+    --border-color-dark: #777;
+    --button-hover-light: #d32f2f; /* Dark red hover for buttons */
+    --button-hover-dark: #d32f2f;  /* Dark red hover for buttons */
+    --button-color-light: #fff;
+    --button-color-dark: #fff;
+}
+
 body {
-    font-family: 'Manrope', 'Noto Sans', sans-serif;
-    background-color: #121212;
-    color: #fff;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color-light);
     margin: 0;
     padding: 0;
-  }
-  
-  .dashboard-container {
+}
+
+/* When dark mode is enabled */
+body.theme-dark {
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
+}
+
+/* When light mode is enabled */
+body.theme-light {
+    background-color: var(--background-light);
+    color: var(--text-color-light);
+}
+
+/* Dashboard container */
+.dashboard-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .layout-container {
+    height: 100%;
+}
+
+/* Layout container */
+.layout-container {
     display: flex;
     flex-direction: column;
-    flex: 1;
-  }
-  
-  .dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
-    border-bottom: 1px solid #292929;
-    background-color: #1f1f1f;
-  }
-  
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .logo {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .brand {
-    font-size: 1.25rem;
+    flex-grow: 1;
+}
+
+/* Dashboard content */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: var(--background-light);
+}
+
+body.theme-dark .dashboard-content {
+    background-color: var(--background-dark);
+}
+
+/* Content container */
+.content-container {
+    background-color: var(--card-background-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-dark .content-container {
+    background-color: var(--card-background-dark);
+}
+
+/* Section */
+.section {
+    margin-bottom: 30px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+body.theme-dark .section-title {
+    color: var(--text-color-dark);
+}
+
+/* Profile section */
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-title {
+    font-size: 1.5rem;
     font-weight: bold;
-  }
-  
-  .header-right {
+    color: var(--text-color-light);
+}
+
+body.theme-dark .profile-title {
+    color: var(--text-color-dark);
+}
+
+/* Profile section content */
+.profile-section {
     display: flex;
     align-items: center;
-    gap: 20px;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-link {
-    color: #fff;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .nav-link.active {
-    text-decoration: underline;
-  }
-  
-  .logout-button {
-    background-color: #292929;
-    color: #fff;
-    font-size: 0.875rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .dashboard-content {
-    display: flex;
-    justify-content: center;
-    padding: 20px 40px;
-    flex: 1;
-    background-color: #121212;
-  }
-  
-  .content-container {
-    max-width: 960px;
-    width: 100%;
-  }
-  
-  .profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-  }
-  
-  .profile-title {
-    font-size: 2rem;
-    font-weight: 900;
-  }
-  
-  .profile-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-  }
-  
-  .profile-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .profile-picture {
-    width: 128px;
-    height: 128px;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     background-size: cover;
     background-position: center;
-    border-radius: 50%;
-  }
-  
-  .profile-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .profile-name {
-    font-size: 1.375rem;
+    margin-right: 20px;
+}
+
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 1.2rem;
     font-weight: bold;
-  }
-  
-  .profile-meta {
-    color: #ababab;
-  }
-  
-  .edit-button {
-    background-color: #292929;
-    color: #fff;
-    font-size: 0.875rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: var(--text-color-light);
+}
+
+.profile-meta {
+    color: var(--text-color-light);
+}
+
+body.theme-dark .profile-name {
+    color: var(--text-color-dark);
+}
+
+body.theme-dark .profile-meta {
+    color: var(--text-color-dark);
+}
+
+/* Edit button */
+.edit-button {
+    background-color: var(--primary-color-light);
+    color: var(--button-color-light);
+    border: none;
+    padding: 8px 20px;
     cursor: pointer;
-  }
-  
-  .section {
-    padding: 20px 0;
-  }
-  
-  .section-title {
-    font-size: 1.125rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .info-item,
-  .address-item {
+    border-radius: 5px;
+}
+
+body.theme-dark .edit-button {
+    background-color: var(--primary-color-dark);
+}
+
+.edit-button:hover {
+    background-color: var(--button-hover-light);
+}
+
+body.theme-dark .edit-button:hover {
+    background-color: var(--button-hover-dark);
+}
+
+/* Info item */
+.info-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background-color: #1f1f1f;
-    padding: 10px;
-    border-radius: 10px;
     margin-bottom: 10px;
-  }
-  
-  .icon {
-    width: 48px;
-    height: 48px;
-    background-color: #292929;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-  }
-  
-  .info-details,
-  .address-details {
+}
+
+.info-item .icon {
+    margin-right: 10px;
+}
+
+.info-item .info-details {
     display: flex;
     flex-direction: column;
-  }
-  
-  .info-label,
-  .address-label {
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  .info-value,
-  .address-line {
-    color: #ababab;
-    font-size: 0.875rem;
-  }
-  
-  .add-pharmacy {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 10px;
-  }
-  
-  .add-pharmacy-button {
-    background-color: #292929;
-    color: #fff;
-    font-size: 0.875rem;
+}
+
+.info-label {
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  /* Modal Styles */
-  .modal {
+}
+
+.info-value {
+    color: var(--text-color-light);
+}
+
+body.theme-dark .info-value {
+    color: var(--text-color-dark);
+}
+
+/* Address item */
+.address-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.address-item .icon {
+    margin-right: 10px;
+}
+
+.address-item .address-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.address-label {
+    font-weight: bold;
+}
+
+.address-line {
+    color: var(--text-color-light);
+}
+
+body.theme-dark .address-line {
+    color: var(--text-color-dark);
+}
+
+/* Modal styles */
+.modal {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
     justify-content: center;
-  }
-  
-  .modal-content {
-    background: #1f1f1f;
-    color: #fff;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-background-light);
     padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-  
-  .modal-content h3 {
-    margin-top: 0;
-  }
-  
-  .modal-body {
-    max-height: 60vh;
-    overflow-y: auto;
-  }
-  
-  .modal-body label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .modal-body input {
+    border-radius: 8px;
+    max-width: 400px;
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #292929;
-    color: #fff;
-  }
-  
-  .modal-footer {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-dark .modal-content {
+    background-color: var(--card-background-dark);
+}
+
+.modal-footer {
     display: flex;
-    justify-content: space-between;
-  }
-  
-  .modal-save-button,
-  .modal-cancel-button {
-    display: inline-block;
-    padding: 10px 20px;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-save-button,
+.modal-cancel-button {
+    background-color: var(--primary-color-light);
+    color: var(--button-color-light);
+    padding: 8px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .modal-save-button {
-    background-color: #4caf50;
-    color: #fff;
-  }
-  
-  .modal-cancel-button {
-    background-color: #f44336;
-    color: #fff;
-  }
+    border-radius: 5px;
+}
+
+body.theme-dark .modal-save-button,
+body.theme-dark .modal-cancel-button {
+    background-color: var(--primary-color-dark);
+}
+
+.modal-save-button:hover,
+.modal-cancel-button:hover {
+    background-color: var(--button-hover-light);
+}
+
+body.theme-dark .modal-save-button:hover,
+body.theme-dark .modal-cancel-button:hover {
+    background-color: var(--button-hover-dark);
+}

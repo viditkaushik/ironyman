@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
-import './AnemiaDetection.css';
-import { ThemeContext } from '../ThemeContext';
+import './AnemiaDetection.css'; // Ensure this CSS file contains the necessary styles
+import { ThemeContext } from '../ThemeContext'; // Context to handle dark/light themes
 import { CameraIcon, ChatCircleDotsIcon, ClockIcon, EnvelopeOpenIcon, MagnifyingGlassIcon, MapPinIcon, OrangeSliceIcon, PhoneIcon, PillIcon } from '../components/Icons';
 
-const AnemiaDetection = () => {
+const UserDashboard = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={`anemia-detection ${theme}`}>
+    <div className={`user-dashboard ${theme}`}>
       <div className="layout-container">
+        {/* Header Section */}
         <header className="header">
           <div className="header-left">
             <h2>Ironyman</h2>
@@ -30,10 +31,12 @@ const AnemiaDetection = () => {
             </div>
           </div>
         </header>
+
+        {/* Main Content Section */}
         <div className="content">
           <div className="content-main">
-            <h1>Anemia detection report</h1>
-            <h2>AI result</h2>
+            <h1>Anemia Detection Report</h1>
+            <h2>AI Result</h2>
             <div className="ai-result">
               <div className="ai-result-step">
                 <CameraIcon />
@@ -41,14 +44,16 @@ const AnemiaDetection = () => {
               </div>
               <div className="ai-result-step">
                 <MagnifyingGlassIcon />
-                <p>AI detected the hemoglobin level in your blood</p>
+                <p>AI detected your hemoglobin level</p>
               </div>
               <div className="ai-result-step">
                 <OrangeSliceIcon />
-                <p>AI provided you with a diet plan to improve your health</p>
+                <p>AI suggested a diet plan to improve your health</p>
               </div>
             </div>
-            <h2>Hemoglobin level trend</h2>
+
+            {/* Hemoglobin Trend Chart */}
+            <h2>Hemoglobin Level Trend</h2>
             <div className="hemoglobin-trend">
               <p>Your hemoglobin level over time</p>
               <div className="hemoglobin-chart">
@@ -81,16 +86,20 @@ const AnemiaDetection = () => {
                 </div>
               </div>
             </div>
-            <h2>Your diet plan</h2>
+
+            {/* Diet Plan */}
+            <h2>Your Diet Plan</h2>
             <p className="diet-plan-description">
-              The diet plan is based on the prediction of your hemoglobin level. If you want to improve it, please follow the diet plan and get your hemoglobin level tested regularly.
+              Follow the diet plan suggested to improve your hemoglobin levels. Regular tests will help track your progress.
             </p>
             <div className="diet-plan">
               <div className="diet-item" style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/12750659-a835-4cae-a38c-3076c07ece97.png")' }}></div>
               <div className="diet-item" style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/509db217-644a-406c-8bcc-80aacf8982ee.png")' }}></div>
               <div className="diet-item" style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/7e1b07a0-d1df-4851-9e55-f07f41edc1da.png")' }}></div>
             </div>
-            <h2>Medicine alternatives</h2>
+
+            {/* Medicine Alternatives */}
+            <h2>Medicine Alternatives</h2>
             <div className="medicine-alternatives">
               <div className="medicine-item">
                 <PillIcon />
@@ -108,29 +117,25 @@ const AnemiaDetection = () => {
                 </div>
                 <p className="medicine-price">$25.00</p>
               </div>
-              <div className="medicine-item">
-                <PillIcon />
-                <div className="medicine-info">
-                  <p className="medicine-name">Qingming Capsules</p>
-                  <p className="medicine-type">Generic medicine</p>
-                </div>
-                <p className="medicine-price">$25.00</p>
-              </div>
             </div>
-            <h2>Nearest generic medicine store</h2>
+
+            {/* Nearest Medicine Store */}
+            <h2>Nearest Generic Medicine Store</h2>
             <div className="nearest-store">
               <MapPinIcon />
               <div className="store-info">
                 <p className="store-name">Generic Medicine Store</p>
                 <p className="store-address">Store address</p>
               </div>
-              <button className="get-directions">Get directions</button>
+              <button className="get-directions">Get Directions</button>
             </div>
           </div>
+
+          {/* Sidebar Section */}
           <div className="content-sidebar">
             <div className="sidebar-section">
               <div className="sidebar-info">
-                <p>Hemoglobin level</p>
+                <p>Hemoglobin Level</p>
                 <p className="sidebar-value">12.3 g/dL</p>
                 <p>Normal: 12.0-16.0 g/dL</p>
               </div>
@@ -138,23 +143,23 @@ const AnemiaDetection = () => {
             </div>
             <div className="sidebar-section">
               <div className="sidebar-info">
-                <p>Diet plan</p>
+                <p>Diet Plan</p>
                 <p className="sidebar-value">Eat more iron-rich foods</p>
                 <p>Spinach, lentils, tofu, pumpkin seeds, quinoa, turkey, beef, chicken, fish, oysters</p>
               </div>
               <div className="sidebar-image" style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/2deb028a-a813-435b-9ee5-a6c6f0e90241.png")' }}></div>
             </div>
-            <button className="download-report">Download report</button>
+            <button className="download-report">Download Report</button>
             <button className="start-chat">
               <ChatCircleDotsIcon />
-              Start chat
+              Start Chat
             </button>
-            <h3>Need help?</h3>
+            <h3>Need Help?</h3>
             <div className="support-info">
               <div className="support-item">
                 <ClockIcon />
                 <div className="support-text">
-                  <p>Support hours</p>
+                  <p>Support Hours</p>
                   <p>Mon-Fri, 9am-5pm (PST)</p>
                 </div>
                 <p>Open</p>
@@ -183,4 +188,4 @@ const AnemiaDetection = () => {
   );
 };
 
-export default AnemiaDetection;
+export default UserDashboard;
